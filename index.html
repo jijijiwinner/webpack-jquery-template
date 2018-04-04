@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
+    <title><%= title %></title>
+  </head>
+  <body>
+      <div><%= require('html-loader!./src/commonpage/header.html') %></div>
+      <p>这是<%= title %>官方网站</p>
+      <p><a href="./content.html">去新闻页面</a></p>
+      <div class="box"></div>
+      <img src=<%= require('./src/img/ce.png') %> />
+      <img src=<%= require('./src/img/1.png') %> />
+  </body>
+</html>
