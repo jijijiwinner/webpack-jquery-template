@@ -1,3 +1,4 @@
+import $ from 'jquery';
 function clientSideInclude(id, url) {
     var req = false;
 
@@ -42,3 +43,4 @@ function clientSideInclude(id, url) {
 }
 
 clientSideInclude("header", "./header.html");
+$('#header').addClass('haha')
