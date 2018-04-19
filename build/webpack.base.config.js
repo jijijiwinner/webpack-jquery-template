@@ -60,7 +60,8 @@ module.exports = function(env){
             }),
             new HtmlWebpackPlugin({
                 template: path.join(__dirname, '../src/commonpage/header.html'),
-                filename:'header.html'
+                filename:'header.html',
+                chunks:['common']
             }),
             new ExtractTextPlugin({ filename: "marathon.css", allChunks: true }) //编译生成bootstrap.css
         ]
