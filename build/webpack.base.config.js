@@ -12,7 +12,10 @@ module.exports = function(env){
 
     return Merge(WebpackConfig,{
         entry: {
-            app: './src/index.js'
+            index: './src/index.js',
+            common: './src/common.js',
+            list: './src/list.js',
+            content: './src/content.js',
         },
         module: {
             rules: [
@@ -42,11 +45,22 @@ module.exports = function(env){
             }),
             new HtmlWebpackPlugin({
                 template: path.join(__dirname, '../index.html'),
-                filename:'index.html'
+                filename:'index.html',
+                chunks:['common','index']
             }),
             new HtmlWebpackPlugin({
                 template: path.join(__dirname, '../content.html'),
-                filename:'content.html'
+                filename:'content.html',
+                chunks:['common','content']
+            }),
+            new HtmlWebpackPlugin({
+                template: path.join(__dirname, '../list.html'),
+                filename:'list.html',
+                chunks:['common','list']
+            }),
+            new HtmlWebpackPlugin({
+                template: path.join(__dirname, '../src/commonpage/header.html'),
+                filename:'header.html'
             }),
             new ExtractTextPlugin({ filename: "marathon.css", allChunks: true }) //编译生成bootstrap.css
         ]
