@@ -43,4 +43,4 @@ function clientSideInclude(id, url) {
 }
 
 clientSideInclude("header", "./header.html");
-$('#header').addClass('haha')
+// $('#header').addClass('haha')
